@@ -1,27 +1,32 @@
 set nu
+"切换tab页面
 nnoremap <c-n> :tabn<cr>
 nnoremap <c-p> :tabp<cr>
+set switchbuf+=newtab "回车在新tab页面打开
 
 nnoremap <space> :
 "set cuc cul
 
 set nocompatible "不要vim模仿vi模式，建议设置，否则会有很多不兼容的问题
-syntax on"打开高亮
+syntax on "打开高亮
+set hlsearch
+
 set tabstop=4 "让一个tab等于4个空格
 set softtabstop=4
-set shiftwidth=4
+set shiftwidth=4 "自动缩进长度
+set expandtab "tab转换为空格
 set autoindent
-set backspace=start,indent,eol
-set foldmethod=marker
-set showcmd
-set autoindent
-set t_Co=256
-syntax on
-set relativenumber
-filetype indent on
-set expandtab
+set backspace=start,indent,eol "配置删除 相当于set backspace=2
 
-imap <c-a> <esc>ggyGy
+set foldmethod=marker "创建折叠 zf  在括号折叠zf%  关闭折叠zd
+set showcmd "show cmd
+
+set t_Co=256
+set relativenumber "同于set rnu 
+filetype indent on
+
+"imap <c-a> <esc>ggyGy
+
 let mapleader = ";"
 nmap <leader>w :w<CR>:q<CR>
 nmap <leader>q :q<CR>
@@ -29,9 +34,6 @@ nmap <leader>q :q<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 "重新读取vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
-
-map <F3> :NERDTreeMirror<CR>
-map <F3> :NERDTreeToggle<CR>
 
 inoremap <esc> <nop>
 inoremap kj <ESC>
@@ -52,11 +54,6 @@ Plug 'skywind3000/vim-preview'
 Plug 'skywind3000/gutentags_plus'
 call plug#end()
 
-
-nnoremap <m-u> :PreviewScroll -1<cr>
-nnoremap <m-d> :PreviewScroll +1<cr>
-inoremap <m-u> <c-\><c-o>:PreviewScroll -1<cr>
-inoremap <m-d> <c-\><c-o>:PreviewScroll +1<cr>
 
 source ~/.vim/vimrcs/autotag.vim
 source ~/.vim/vimrcs/netrw.vim

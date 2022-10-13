@@ -46,3 +46,19 @@ let g:gutentags_auto_add_gtags_cscope = 1
 
 set cscopeprg=gtags-cscope
 cs add GTAGS
+
+
+"vim内 gtags相关映射
+";f  打开quickfix ;g 关闭, 在quickfix 里面p 预览， P关闭,
+"没有预览的时候回车在新tab打开, ctrl +j/k 翻动预览页
+nnoremap <leader>f :copen<cr>
+"nnoremap <leader>f :PreviewTag<cr>
+nnoremap <silent><leader>g :cclose<cr>
+"autocmd FileType qf nnoremap <silent><buffer> <leader>c :cclose<cr>
+autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
+noremap <leader>s :PreviewSignature!<cr>
+inoremap <F4> <c-\><c-o>:PreviewSignature!<cr>
+
+nnoremap <c-k> :PreviewScroll -1<cr>
+nnoremap <c-j> :PreviewScroll +1<cr>
