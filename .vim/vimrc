@@ -4,6 +4,10 @@ nnoremap <c-n> :tabn<cr>
 nnoremap <c-p> :tabp<cr>
 set switchbuf+=newtab "回车在新tab页面打开
 
+"fix when open file by vim display "ESC[?4m
+set keyprotocol=
+let &term=&term
+
 nnoremap <space> :
 "set cuc cul
 
@@ -35,7 +39,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 "重新读取vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 inoremap kj <ESC>
 
 map <F4> : call CopyToWindows()<CR> " 复制到windows的剪切板
