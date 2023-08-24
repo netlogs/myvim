@@ -63,6 +63,7 @@ source ~/.vim/vimrcs/autotag.vim
 source ~/.vim/vimrcs/netrw.vim
 source ~/.vim/vimrcs/miniycm.vim
 source ~/.vim/vimrcs/ale.vim
+source ~/.vim/vimrcs/go.vim
 "source ~/.vim/vimrcs/gtags.vim
 
 
